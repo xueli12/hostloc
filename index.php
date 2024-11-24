@@ -128,7 +128,7 @@ function get_cc_cookie()
 function check_cc()
 {
     $data = [];
-    $html = file_get_contents('https://hostloc.com/forum.php');
+    $html = http_get('https://hostloc.com/forum.php');
 
     preg_match_all("/toNumbers\(\"(.*?)\"\)/", $html, $matches);
     if (isset($matches[1]) && count($matches[1]) === 3) {
