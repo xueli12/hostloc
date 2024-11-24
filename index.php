@@ -207,6 +207,9 @@ function http_get($url)
     }
     curl_setopt($ch, CURLOPT_USERAGENT, 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36');
     curl_setopt($ch, CURLOPT_REFERER, 'https://hostloc.com/');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "origin: https://hostloc.com"
+    ]);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -233,6 +236,9 @@ function http_post($url, $data, $cookie = [])
     curl_setopt($ch, CURLOPT_COOKIE, http_build_query($cookie, '', '; '));
     curl_setopt($ch, CURLOPT_USERAGENT, 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36');
     curl_setopt($ch, CURLOPT_REFERER, 'https://hostloc.com/');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "origin: https://hostloc.com"
+    ]);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
